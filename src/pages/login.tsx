@@ -1,5 +1,5 @@
-import FormContainer from "./formContainer";
-import FormikLogin from "./loginComponent";
+import FormContainer from "../components/account/formContainer";
+import FormikLogin from "../components/account/loginComponent";
 import { useRouter } from "next/router";
 import Head from "next/head";
 

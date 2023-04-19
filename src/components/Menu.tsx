@@ -30,7 +30,7 @@ const Menu = () => {
       ),
     },
     {
-      href: "/account/register",
+      href: "/register",
       info: (
         <Flex alignItems="center" gap="0.5rem">
           <LockKey size={24} />
@@ -39,7 +39,7 @@ const Menu = () => {
       ),
     },
     {
-      href: "/account/login",
+      href: "/login",
       info: (
         <Flex alignItems="center" gap="0.5rem">
           <SignIn size={24} />
@@ -55,8 +55,8 @@ const Menu = () => {
           <Box>About</Box>
         </Flex>
       ),
-    },{
-      href: "/chart/chart",
+    }, {
+      href: "/chart",
       info: (
         <Flex alignItems="center" gap="0.5rem">
           <Info size={24} />

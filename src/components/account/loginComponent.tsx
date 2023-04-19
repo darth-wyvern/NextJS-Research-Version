@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import {
   FormControl,
@@ -15,8 +15,6 @@ import {
 } from "@chakra-ui/react";
 import { Eye, EyeSlash, Lock, UserFocus } from "phosphor-react";
 import { useRouter } from "next/router";
-import axios from "axios";
-import { validatePassword, validateUsername } from "./utils/checkMethod";
 import Link from "next/link";
 import { checkAccount, setAccountCurrent } from "../../store/account";
 
@@ -25,6 +23,30 @@ export default function FormikLogin() {
   const [showPassword, setShowPassword] = useState(true);
   const [showEye, setShowEye] = useState(false);
   const bgInput = useColorModeValue("gray.100", "whiteAlpha.100");
+
+  const validatePassword = (value) => {
+    let error;
+    if (!value) {
+      error = "password is required";
+    } else if (value.length < 6) {
+      error = "password have to than 6 character";
+    } else if (value.length > 24) {
+      error = "password have to smaller 24 character";
+    }
+    return error;
+  };
+
+  const validateUsername = (value) => {
+    let error;
+    if (!value) {
+      error = "username is required";
+    } else if (value.length < 6) {
+      error = "username have to than 6 character";
+    } else if (value.length > 24) {
+      error = "username have to smaller 24 character";
+    }
+    return error;
+  };
 
   const handleSubmit = (values, actions) => {
     setTimeout(() => {

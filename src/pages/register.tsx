@@ -1,5 +1,5 @@
-import FormContainer from "./formContainer";
-import FormikRegister from "./registerComponent";
+import FormContainer from "../components/account/formContainer";
+import FormikRegister from "../components/account/registerComponent";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
