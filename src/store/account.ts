@@ -1,7 +1,6 @@
-import axios from "axios";
 
-var accountCurrent = null;
-var accounts = [];
+let accountCurrent = null;
+let accounts = [];
 
 export function getAccounts() {
   return accounts;

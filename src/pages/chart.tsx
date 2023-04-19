@@ -5,16 +5,8 @@ import HighchartsReact from 'highcharts-react-official';
 
 export default function LineChart() {
   const [data, setData] = useState([])
-  var ohlc = [],
-    dataLength = data.length,
-    // set the allowed units for data grouping
-    groupingUnits = [[
-      'week',                         // unit name
-      [1]                             // allowed multiples
-    ], [
-      'month',
-      [1, 2, 3, 4, 6]
-    ]]
+  let ohlc = [];
+  let dataLength = data.length
 
   for (let i = 0; i < dataLength; i++) {
     ohlc.push([
@@ -22,7 +14,7 @@ export default function LineChart() {
       data[i][1], // open
       data[i][2], // high
       data[i][3], // low
-      data[i][4] // close
+      data[i][4], // close
     ]);
   }
 
