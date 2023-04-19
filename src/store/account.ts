@@ -1,25 +1,36 @@
 
-let accountCurrent = null;
-let accounts = [];
+const initialAccount: account = {
+  id: '',
+  username: '',
+  password: '',
+  firstName: '',
+  lastName: '',
+  address: '',
+  phone: '',
+};
 
-export function getAccounts() {
+let current: account = initialAccount;
+
+let accounts: account[] = [];
+
+export function getAccounts() : account[] {
   return accounts;
 }
 
-export function setAccounts(listAccount) {
+export function setAccounts(listAccount: account[]) {
   accounts = listAccount;
 }
 
-export function getAccountCurrent() {
-  return accountCurrent;
+export function getCurrent() : account {
+  return current;
 }
 
-export function setAccountCurrent(username, password) {
-  accountCurrent.username = username;
-  accountCurrent.password = password;
+export function setCurrent(username: string, password: string) {
+  current.username = username;
+  current.password = password;
 }
 
-export function checkAccount(username, password) {
+export function checkAccount(username: string, password: string) {
   return accounts.find(
     (account) => account.username === username && account.password === password
   );

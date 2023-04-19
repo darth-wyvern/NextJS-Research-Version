@@ -19,11 +19,9 @@ import Link from "next/link";
 import { checkAccount, getAccounts } from "../../store/account";
 
 export default function FormikRegister() {
-  const router = useRouter();
   const title = useColorModeValue("black", "white");
-  const [process, setProcess] = useState(0);
 
-  const validateUsername = (value) => {
+  const validateUsername = (value: string): string => {
     let error;
     if (!value) {
       error = "username is required";
@@ -35,7 +33,7 @@ export default function FormikRegister() {
     return error;
   };
 
-  const validatePassword = (value) => {
+  const validatePassword = (value: string): string => {
     let error;
     if (!value) {
       error = "password is required";
@@ -47,7 +45,7 @@ export default function FormikRegister() {
     return error;
   };
 
-  const validateConfirmPassword = (pass, value) => {
+  const validateConfirmPassword = (pass: string, value: string): string => {
     let error;
     if (!value) {
       error = "confirm password is required";
@@ -136,7 +134,7 @@ export default function FormikRegister() {
           </Button>
 
           <Box color="blue.200" textAlign="center" mt="2rem">
-            <Link href="/account/login">you have account go login</Link>
+            <Link href="/login">you have account go login</Link>
           </Box>
         </Form>
       )}

@@ -1,22 +1,21 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useRouter } from "next/router";
 import { setAccounts } from "../store/account";
 import {
   Box,
-  Button,
   Flex,
   FormControl,
-  Grid,
   Image,
   Input,
   InputGroup,
   InputLeftElement,
-  InputRightElement,
 } from "@chakra-ui/react";
 import { Field, Form, Formik } from "formik";
 import { MagnifyingGlass } from "phosphor-react";
 
 const IndexPage = () => {
+  const router = useRouter()
   const [api, getApi] = useState();
   const [images, setImages] = useState([]);
 
@@ -32,6 +31,8 @@ const IndexPage = () => {
   useEffect(() => {
     setAccounts(api);
   }, [api]);
+
+  if (!api) return (<div>loading</div>)
 
   const handleSubmit = (values) => {
     const fetchData = async () => {
@@ -59,7 +60,7 @@ const IndexPage = () => {
       <Flex w="100%">
         <Formik initialValues={{ query: "" }} onSubmit={handleSubmit}>
           {(props) => (
-            <Form style={{ width: "100%" }}>
+            <Form style={{ width: "100%", marginBottom: "1rem" }}>
               <Field name="query">
                 {({ field, form }) => (
                   <FormControl>
@@ -81,7 +82,7 @@ const IndexPage = () => {
         </Formik>
       </Flex>
 
-      <Box overflow="auto" style={{ columns: 4 }} mt="1rem">
+      <Box overflow="auto" style={{ columns: 4 }}>
         {images ? (
           images.map((image, index) => (
             <Box key={index} display="inline-block">
@@ -92,7 +93,7 @@ const IndexPage = () => {
           <div>loading</div>
         )}
       </Box>
-    </Flex>
+    </Flex >
   );
 };
 

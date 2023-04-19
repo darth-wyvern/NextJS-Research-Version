@@ -16,7 +16,7 @@ import {
 import { Eye, EyeSlash, Lock, UserFocus } from "phosphor-react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { checkAccount, setAccountCurrent } from "../../store/account";
+import { checkAccount, setCurrent } from "../../store/account";
 
 export default function FormikLogin() {
   const router = useRouter();
@@ -24,7 +24,13 @@ export default function FormikLogin() {
   const [showEye, setShowEye] = useState(false);
   const bgInput = useColorModeValue("gray.100", "whiteAlpha.100");
 
-  const validatePassword = (value) => {
+  interface FormValues {
+    username: string;
+    password: string;
+    remember: boolean;
+  }
+
+  const validatePassword = (value: string): string => {
     let error;
     if (!value) {
       error = "password is required";
@@ -36,7 +42,7 @@ export default function FormikLogin() {
     return error;
   };
 
-  const validateUsername = (value) => {
+  const validateUsername = (value: string): string => {
     let error;
     if (!value) {
       error = "username is required";
@@ -48,11 +54,11 @@ export default function FormikLogin() {
     return error;
   };
 
-  const handleSubmit = (values, actions) => {
+  const handleSubmit = (values: FormValues, actions) => {
     setTimeout(() => {
       const loginSuccess = checkAccount(values.username, values.password);
       if (loginSuccess) {
-        setAccountCurrent(values.username, values.password);
+        setCurrent(values.username, values.password);
         router.push("/");
       }
 
@@ -144,7 +150,7 @@ export default function FormikLogin() {
           </Button>
 
           <Box textAlign="center" mt="2rem" color="blue.200">
-            <Link href="/account/register">register a account</Link>
+            <Link href="/register">register a account</Link>
           </Box>
         </Form>
       )}
