@@ -1,3 +1,4 @@
+import { account } from "../../interface";
 
 const initialAccount: account = {
   id: '',

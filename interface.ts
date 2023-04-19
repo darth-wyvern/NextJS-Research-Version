@@ -1,4 +1,4 @@
-interface account {
+export interface account {
   id: string;
   username: string;
   password: string;
