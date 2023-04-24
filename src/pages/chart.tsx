@@ -36,10 +36,13 @@ export default function LineChart() {
       selected: 1
     },
 
-    tooltip: {
+    accessibility: {
       enabled: false
     },
 
+    tooltip: {
+      enabled: false
+    },
 
     title: {
       text: 'AAPL Stock Price'

@@ -16,7 +16,7 @@ import { Lock, UserFocus } from "phosphor-react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { checkAccount, getAccounts } from "../../store/account";
+import { checkAccount, getAccounts } from "../store/account";
 
 export default function FormikRegister() {
   const title = useColorModeValue("black", "white");
