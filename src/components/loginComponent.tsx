@@ -16,7 +16,7 @@ import {
 import { Eye, EyeSlash, Lock, UserFocus } from "phosphor-react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { checkAccount, setCurrent } from "../../store/account";
+import { checkAccount, setCurrent } from "../store/account";
 
 export default function FormikLogin() {
   const router = useRouter();
