@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 
 const ChangeState = () => {
-  const [loaded, setLoaded] = useState(false)
-  useEffect(() => {
-    setLoaded(true)
-  }, [])
+  const [toggleTextVisible, setToggleTextVisible] = useState(false)
   return (
     <div>
-      {loaded && <h3> Page Loaded </h3>}
+      {toggleTextVisible && <p> Text visible </p>}
+      <button onClick={() => { setToggleTextVisible(!toggleTextVisible) }}>
+        Toggle text
+      </button>
     </div>
   )
 }
