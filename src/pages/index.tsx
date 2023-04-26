@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { Field, Form, Formik } from "formik";
 import { MagnifyingGlass } from "phosphor-react";
+import FetchApi from "../components/Test/fetchAPI";
 
 const IndexPage = () => {
   const router = useRouter()
@@ -30,7 +31,7 @@ const IndexPage = () => {
 
   useEffect(() => {
     setAccounts(api);
-  }, [api]);
+  }, []);
 
   if (!api) return (<div>loading</div>)
 
@@ -57,6 +58,8 @@ const IndexPage = () => {
 
   return (
     <Flex flex="1" flexDir="column">
+      <FetchApi />
+
       <Flex w="100%">
         <Formik initialValues={{ query: "" }} onSubmit={handleSubmit}>
           {(props) => (
