@@ -20,6 +20,6 @@ const mockData = [
 ]
 
 test("Ordered list renders", () => {
-  render(<TestWithMockData data={mockData} displayUnorderedList={false} handleClick={console.log('mock data')} />)
+  render(<TestWithMockData data={mockData} displayUnorderedList={false} handleClick />)
   expect(screen.getByText(/McVanamy/i)).toBeInTheDocument()
 })

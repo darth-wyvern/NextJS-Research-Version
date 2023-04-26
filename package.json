@@ -5,7 +5,8 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "test": "jest --watch --coverage"
+    "test": "jest",
+    "test:coverage": "jest --watch --coverage"
   },
   "dependencies": {
     "@chakra-ui/next-js": "^2.1.2",

@@ -13,7 +13,7 @@ test("Fetch Data API called", async () => {
 
   render(<FetchData />)
   expect(mockFetchData).toHaveBeenCalled();
-  await waitFor(() => {
+  waitFor(() => {
     expect(screen.getByText(/bulbasaur/i)).toBeInTheDocument();
   })
 })
