@@ -58,8 +58,6 @@ const IndexPage = () => {
 
   return (
     <Flex flex="1" flexDir="column">
-      <FetchApi />
-
       <Flex w="100%">
         <Formik initialValues={{ query: "" }} onSubmit={handleSubmit}>
           {(props) => (
