@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import { render, screen } from "@testing-library/react";
-import TestWithMockData from '../components/Test/testWithMockData';
+import TestWithMockData from '../src/components/Test/testWithMockData';
+import React from 'react';
 
 const mockData = [
   {
@@ -19,6 +20,6 @@ const mockData = [
 ]
 
 test("Ordered list renders", () => {
-  render(<TestWithMockData data={mockData} displayUnorderedList={false} />)
+  render(<TestWithMockData data={mockData} displayUnorderedList={false} handleClick={console.log('mock data')} />)
   expect(screen.getByText(/McVanamy/i)).toBeInTheDocument()
 })

@@ -1,5 +1,5 @@
 import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
-import { House, Info, LockKey, SignIn } from "phosphor-react";
+import { ChartLineUp, House, Info, LockKey, SignIn } from "phosphor-react";
 import Link from "next/link";
 import React from "react";
 
@@ -55,12 +55,21 @@ const Menu = () => {
           <Box>About</Box>
         </Flex>
       ),
-    }, {
+    },
+    {
       href: "/chart",
       info: (
         <Flex alignItems="center" gap="0.5rem">
-          <Info size={24} />
+          <ChartLineUp size={24} />
           <Box>Chart</Box>
+        </Flex>
+      ),
+    },
+    {
+      href: "/template",
+      info: (
+        <Flex alignItems="center" gap="0.5rem">
+          <Box>Mui</Box>
         </Flex>
       ),
     },
