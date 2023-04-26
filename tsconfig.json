@@ -22,8 +22,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx" 
-, "src/__tests__/MockData.test.jsx"  ],
+    "**/*.tsx"],
   "exclude": [
     "node_modules"
   ]
